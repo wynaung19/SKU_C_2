@@ -6,7 +6,6 @@ int main(void)
     int list[SIZE] = { 2, 9, 7, 1, 4, 8, 3, 6, 5, 0 };
     int i, j, least, temp;
 
-    printf("Orig :\n");
     for (i = 0; i < SIZE; i++)
     {
         printf("%d ", list[i]);
