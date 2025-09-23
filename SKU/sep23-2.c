@@ -13,7 +13,7 @@ int main(void) {
 
 	for (int i = 0; i < ROWS; i++) {
 		for (int j = 0; j < COLS; j++) {
-			s[i][j] = rand() % 100;
+			scanf("%d", &s[i][j]);
 			sum += s[i][j];
 		}
 	}
@@ -24,7 +24,7 @@ int main(void) {
 		}
 		printf("\n");
 	}
-	printf("Sum: %5d\n", sum);
+	printf("\nSum: %5d\n", sum);
 	printf("Avg: %5.2f\n", (float)sum / (ROWS * COLS) );
 	
 	return 0;
