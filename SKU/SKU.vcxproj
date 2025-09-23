@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="hw.c" />
     <ClCompile Include="sep23-2.c" />
+    <ClCompile Include="sep23-3.c" />
     <ClCompile Include="sep23.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
