@@ -24,8 +24,8 @@ int main(void) {
 		}
 		printf("\n");
 	}
-	printf("Sum: %d\n", sum);
-	printf("Avg: %.2f\n", (float)sum / (ROWS * COLS));
-
+	printf("Sum: %5d\n", sum);
+	printf("Avg: %5.2f\n", (float)sum / (ROWS * COLS) );
+	
 	return 0;
 }
