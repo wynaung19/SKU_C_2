@@ -6,12 +6,15 @@
 #define COLS 5
 int main(void) {
 	int s[ROWS][COLS];
+	float avg = 0.0;
+	int sum = 0;
 
 	srand((unsigned)time(NULL));
 
 	for (int i = 0; i < ROWS; i++) {
 		for (int j = 0; j < COLS; j++) {
 			s[i][j] = rand() % 100;
+			sum += s[i][j];
 		}
 	}
 
