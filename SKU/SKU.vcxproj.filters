@@ -21,5 +21,8 @@
     <ClCompile Include="sep23.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="sep23-2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
