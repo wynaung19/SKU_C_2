@@ -1,5 +1,20 @@
 #include <stdio.h>
-
+//call by value
+//void swap(int x, int y) {
+//	int temp;
+//	temp = x;
+//	x = y;
+//	y = temp;
+//	printf("x = %d, y = %d\n", x, y);
+//}
+// call by reference
+void swap(int* x, int* y) {
+	int temp;
+	temp = *x;
+	*x = *y;
+	*y = temp;
+	printf("x = %d, y = %d\n", *x, *y);
+}
 int main(void) {
 
 	/*int i = 10;
@@ -84,14 +99,22 @@ int main(void) {
 	printf("f = %.2f\n", f);
 	printf("*pi = %d\n", *pi);*/
 
-	int data = 0x0A0B0C0D;
+	/*int data = 0x0A0B0C0D;
 	char* pc;
 	pc = (char*)&data;
 	for (int i = 0; i < 4; i++){
 		printf("*(pc + %d) = %02X\n", i, *(pc + i));
-	}
+	}*/
 
+	int a = 10, b = 20;
+	printf("a = %d, b = %d\n", a, b);
+	//call by value
+	/*swap(a, b);
+	printf("a = %d, b = %d\n", a, b);*/
 
+	// call by reference
+	swap(&a, &b);
+	printf("a = %d, b = %d\n", a, b);
 
 	return 0;
 }
