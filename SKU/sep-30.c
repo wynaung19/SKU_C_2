@@ -135,13 +135,18 @@ int main(void) {
 	else
 		printf("error\n");*/
 
-	int a[5] = { 10,20,30,40,50 };
+	int i,a[5] = { 10,20,30,40,50 };
 
-	printf("&a[0] = %p\n", &a[0]);
-	printf("&a[1] = %u\n", &a[1]);
-	printf("&a[2] = %u\n", &a[2]);
+	/*printf("&a[0] = %p\n", &a[0]);
+	printf("&a[1] = %p\n", &*(a+1));
+	printf("&a[2] = %p\n", &a[2]);
+	printf("&a[3] = %p\n", &a[3]);
 
-	printf("a   = %u\n", a);
+	printf("a     = %p\n", &a);*/
+	printf("a     = %p\n", a);
+
+	for (i = 0; i < 5; i++)
+		printf("(a+%d)=%u *(a+%d)=%d\n", i, (a + i), i, *(a + i));
 
 	return 0;
 }
