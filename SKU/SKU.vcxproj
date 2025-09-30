@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="9-30.c" />
+    <ClCompile Include="sep-30.c" />
     <ClCompile Include="hw.c" />
     <ClCompile Include="sep23-2.c" />
     <ClCompile Include="sep23-3.c" />
