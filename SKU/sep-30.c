@@ -68,13 +68,30 @@ int main(void) {
 	++*p;
 	printf("A = %d\n", A);*/
 
-	int i = 10;
+	/*int i = 10;
 	int* pi = &i;
 	printf("i = %d, pi = %p\n", *pi, pi);
 	(*pi)++;
 	printf("i = %d, pi = %p\n", *pi, pi);
 	(*pi)++;
-	printf("i = %d, pi = %p\n", i, pi);
+	printf("i = %d, pi = %p\n", i, pi);*/
+
+	/*double f = 12.3;
+	double* pd = &f;
+	int* pi;
+
+	pi = (int*)pd;
+	printf("f = %.2f\n", f);
+	printf("*pi = %d\n", *pi);*/
+
+	int data = 0x0A0B0C0D;
+	char* pc;
+	pc = (char*)&data;
+	for (int i = 0; i < 4; i++){
+		printf("*(pc + %d) = %02X\n", i, *(pc + i));
+	}
+
+
 
 	return 0;
 }
