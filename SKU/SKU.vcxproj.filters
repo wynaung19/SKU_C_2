@@ -30,5 +30,8 @@
     <ClCompile Include="sep23-4.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="9-30.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
