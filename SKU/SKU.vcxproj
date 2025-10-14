@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="oct-14-2.c" />
+    <ClCompile Include="oct-14-3.c" />
     <ClCompile Include="oct-14.c" />
     <ClCompile Include="sep-30.c" />
     <ClCompile Include="hw.c" />
