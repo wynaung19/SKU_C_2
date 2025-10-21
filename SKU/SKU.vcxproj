@@ -19,7 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="10-21.c" />
+    <ClCompile Include="hw2.c" />
+    <ClCompile Include="oct-21.c" />
     <ClCompile Include="oct-14-2.c" />
     <ClCompile Include="oct-14-3.c" />
     <ClCompile Include="oct-14.c" />

@@ -42,7 +42,10 @@
     <ClCompile Include="oct-14-3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="10-21.c">
+    <ClCompile Include="oct-21.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hw2.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
