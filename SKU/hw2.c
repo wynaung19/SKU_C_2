@@ -13,6 +13,14 @@ struct student {
 	int grade;
 };
 
+char grade_letter(int grade) {
+	if (grade >= 85) return 'A';
+	else if (grade >= 70) return 'B';
+	else if (grade >= 55) return 'C';
+	else if (grade >= 40) return 'D';
+	else return 'F';
+}
+
 void print(struct student s) {
 	switch (s.type){
 	case STU_NUMBER:
@@ -38,8 +46,14 @@ int main() {
 	strcpy(s2.name, "Aung Aung");
 	print(s1);
 	print(s2);*/
-	printf("Enter type, id and name: ");
-	scanf("%d %d %s %", &s3.type, &s3.id.stu_number, s3.name);
-	print(s3);
+	printf("Enter type, id and name grade for stu1: ");
+	scanf("%d %d %s %d", &s1.type, &s1.id.stu_number, s1.name, &s1.grade);
+	printf("Enter type, id and name grade for stu2: ");
+	scanf("%d %s %s %d", &s2.type, s2.id.reg_number, s2.name, &s2.grade);
+	printf("Enter type, id and name grade for stu3: ");
+	scanf("%d %s %s %d", &s3.type, s3.id.reg_number, s3.name, &s3.grade);
+
+	
 	return 0;
 }
+
