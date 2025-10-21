@@ -21,6 +21,14 @@ char grade_letter(int grade) {
 	else return 'F';
 }
 
+int avg_grade(struct student s[], int n) {
+	int sum = 0;
+	for (int i = 0; i < n; i++) {
+		sum += s[i].grade;
+	}
+	return sum / n;
+}
+
 void print(struct student s) {
 	switch (s.type){
 	case STU_NUMBER:
@@ -58,6 +66,8 @@ int main() {
 	printf("%d\t%s\t%s\t%d\t%c\n", s2.type, s2.id.reg_number, s2.name, s2.grade, grade_letter(s2.grade));
 	printf("%d\t%s\t%s\t%d\t%c\n", s3.type, s3.id.reg_number, s3.name, s3.grade, grade_letter(s3.grade));
 
+	struct student students[] = { s1, s2, s3 };
+	printf("Average Grade: %d\n", avg_grade(students, 3));
 	
 	return 0;
 }
