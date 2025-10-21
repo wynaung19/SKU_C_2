@@ -53,6 +53,11 @@ int main() {
 	printf("Enter type, id and name grade for stu3: ");
 	scanf("%d %s %s %d", &s3.type, s3.id.reg_number, s3.name, &s3.grade);
 
+	printf("TYPE\tID\tNAME\tSCORE\tGRADE\n");
+	printf("%d\t%d\t%s\t%d\t%c\n", s1.type, s1.id.stu_number, s1.name, s1.grade, grade_letter(s1.grade));
+	printf("%d\t%s\t%s\t%d\t%c\n", s2.type, s2.id.reg_number, s2.name, s2.grade, grade_letter(s2.grade));
+	printf("%d\t%s\t%s\t%d\t%c\n", s3.type, s3.id.reg_number, s3.name, s3.grade, grade_letter(s3.grade));
+
 	
 	return 0;
 }
