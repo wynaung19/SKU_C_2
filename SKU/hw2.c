@@ -30,7 +30,7 @@ int avg_grade(struct student s[], int n) {
 }
 
 void print(struct student s) {
-	switch (s.type){
+	switch (s.type) {
 	case STU_NUMBER:
 		printf("STUNUM : %d\n", s.id.stu_number);
 		printf("NAME : %s\n", s.name);
@@ -45,7 +45,7 @@ void print(struct student s) {
 }
 
 int main() {
-	struct student s1, s2,s3;
+	struct student s1, s2, s3;
 	/*s1.type = STU_NUMBER;
 	s1.id.stu_number = 1001;
 	strcpy(s1.name, "Wai Yan Naung");
@@ -68,7 +68,7 @@ int main() {
 
 	struct student students[] = { s1, s2, s3 };
 	printf("Average Grade: %d\n", avg_grade(students, 3));
-	
+
 	return 0;
 }
 
