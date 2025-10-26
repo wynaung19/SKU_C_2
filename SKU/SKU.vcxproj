@@ -30,6 +30,7 @@
     <ClCompile Include="sep23-3.c" />
     <ClCompile Include="sep23-4.c" />
     <ClCompile Include="sep23.c" />
+    <ClCompile Include="test.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
