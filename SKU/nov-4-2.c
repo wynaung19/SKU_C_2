@@ -61,44 +61,57 @@
 //	return 0;
 //}
 
-#include <stdio.h>
-#define ROWS 4
-#define COLS 3
-double get_row_avg(int m[ROWS][COLS], int r);
-double get_total_avg(int m[ROWS][COLS]);
-int main() {
-	int m[ROWS][COLS] = { {10,20,30}, {10,20,30},
-	{10,20,30}, {10,20,30} };
-	int sum;
-	int total;
-	sum = get_row_avg(m, 2);
-	total = get_total_avg(m);
-	printf("main total= %2.2lf\n",
-		(double)total);
-	return 0;
-}
-double get_row_avg(int m[ROWS][COLS], int r)
-{
-	int* p, * endp;
-	double sum = 0.0;
-	p = &m[r][0];
-	endp = &m[r][COLS];
-	while (p < endp)
-		sum += *p++; //이 부분 두줄로 해보기
-	sum /= COLS; //평균 계산
-	return sum;
-}
+//#include <stdio.h>
+//#define ROWS 4
+//#define COLS 3
+//double get_row_avg(int m[ROWS][COLS], int r);
+//double get_total_avg(int m[ROWS][COLS]);
+//int main() {
+//	int m[ROWS][COLS] = { {10,20,30}, {10,20,30},
+//	{10,20,30}, {10,20,30} };
+//	int sum;
+//	int total;
+//	sum = get_row_avg(m, 2);
+//	total = get_total_avg(m);
+//	printf("main total= %2.2lf\n",
+//		(double)total);
+//	return 0;
+//}
+//double get_row_avg(int m[ROWS][COLS], int r)
+//{
+//	int* p, * endp;
+//	double sum = 0.0;
+//	p = &m[r][0];
+//	endp = &m[r][COLS];
+//	while (p < endp)
+//		sum += *p++; //이 부분 두줄로 해보기
+//	sum /= COLS; //평균 계산
+//	return sum;
+//}
+//double get_total_avg(int m[ROWS][COLS])
+//{
+//	int* p, * endp;
+//	double sum = 0.0;
+//	p = &m[0][0];
+//	endp = &m[ROWS - 1][COLS - 1];
+//	while (p < endp)
+//		sum += *p++;
+//	sum /= ROWS * COLS;
+//	printf("subprogram total= %2.2lf\n",
+//		sum);
+//	return sum;
+//}
 
-double get_total_avg(int m[ROWS][COLS])
-{
-	int* p, * endp;
-	double sum = 0.0;
-	p = &m[0][0];
-	endp = &m[ROWS - 1][COLS - 1];
-	while (p < endp)
-		sum += *p++;
-	sum /= ROWS * COLS;
-	printf("subprogram total= %2.2lf\n",
-		sum);
-	return sum;
-}
+//#include <stdio.h>
+//int main(void)
+//{
+//	char s[] = "Barking dogs seldom bite.";
+//	char t[] = "A bad workman blames his tools";
+//	const char* p = s;
+//	char* const q = s;
+//	//p[3] = 'a';
+//	p = t;
+//	q[3] = 'a';
+//	//q = t;
+//	return 0;
+//}

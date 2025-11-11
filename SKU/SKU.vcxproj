@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="11-11.c" />
     <ClCompile Include="hw2.c" />
     <ClCompile Include="nov-4-2.c" />
     <ClCompile Include="nov-4.c" />
