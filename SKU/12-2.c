@@ -138,25 +138,82 @@
 //	return 0;
 //}
 
+//typedef struct NODE {
+//	int data;
+//	struct NODE* link;
+//} NODE;
+//
+//int main(void) {
+//	NODE* p1;
+//	p1 = (NODE*)malloc(sizeof(NODE));
+//	p1->data = 10;
+//	p1->link = NULL;
+//
+//	NODE* p2;
+//	p2 = (NODE*)malloc(sizeof(NODE));
+//	p2->data = 20;
+//	p2->link = NULL;
+//	p1->link = p2;
+//
+//	NODE* p3;
+//	p3 = (NODE*)malloc(sizeof(NODE));
+//	p3->data = 30;
+//	p3->link = NULL;
+//	p2->link = p3;
+//
+//	printf("%d %d %d \n", p1->data, p1->link->data, p1->link->link->data);
+//	free(p2);
+//	free(p1);
+//	return 0;
+//}
+
+#define S_SIZE 50
 typedef struct NODE {
-	int data;
+	char title[S_SIZE];
+	int year;
 	struct NODE* link;
 } NODE;
-
 int main(void) {
-	NODE* p1;
-	p1 = (NODE*)malloc(sizeof(NODE));
-	p1->data = 10;
-	p1->link = NULL;
-
-	NODE* p2;
-	p2 = (NODE*)malloc(sizeof(NODE));
-	p2->data = 20;
-	p2->link = NULL;
-	p1->link = p2;
-
-	printf("%d %d\n", p1->data, p1->link->data);
-	free(p2);
-	free(p1);
+	NODE* list = NULL;
+	NODE* p, * next;
+	//vb때문에 수정한 부분
+	NODE* prev = 0;
+	char buffer[S_SIZE];
+	int year;
+	while (1) {
+		printf("책의 제목을 입력하시오: (종료하려면 엔터)");
+		gets(buffer); //gets_s(buffer, 50);
+		if (buffer[0] == '\0')
+			break;
+		p = (NODE*)malloc(sizeof(NODE));
+		strcpy(p->title, buffer); //strcpy_s(p->title, 50, buffer);
+		printf("책의 출판 연도를 입력하시오: ");
+		gets(buffer); //gets_s(buffer, 50);
+		year = atoi(buffer);
+		p->year = year;
+		if (list == NULL) //리스트가 비어 있으면
+			list = p; //새로운 노드를 첫번째 노드로 만든다
+		else //리스트가 비어 있지 않으면
+			prev->link = p; //새로운 노드를 이전 노드의 끝에 붙임
+		p->link = NULL; //새로운 노드의 링크 필드를 NULL로 설정
+		prev = p;
+	}
+	printf("\n");
+	// 연결 리스트의 정보를 모두 출력
+	p = list;
+	while (p != NULL)
+	{
+		printf("책의 제목:%s 출판 연도:%d \n", p->title, p->year);
+		p = p->link;
+	}
+	// 동적 할당 반납
+	p = list;
+	while (p != NULL)
+	{
+		next = p->link;
+		free(p);
+		p = next;
+	}
+	return 0;
 	return 0;
 }
