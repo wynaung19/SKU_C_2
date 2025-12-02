@@ -66,9 +66,21 @@
     <ClCompile Include="11-25.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="power.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rect.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="12-2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="test.h">
+    <ClInclude Include="power.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
