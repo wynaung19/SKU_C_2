@@ -23,6 +23,7 @@
     <ClCompile Include="11-18.c" />
     <ClCompile Include="11-25.c" />
     <ClCompile Include="12-2.c" />
+    <ClCompile Include="book.c" />
     <ClCompile Include="hw2.c" />
     <ClCompile Include="nov-4-2.c" />
     <ClCompile Include="nov-4.c" />
@@ -41,6 +42,7 @@
     <ClCompile Include="test.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="b.h" />
     <ClInclude Include="power.h" />
     <ClInclude Include="rect.h" />
   </ItemGroup>
