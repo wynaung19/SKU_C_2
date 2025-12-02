@@ -167,53 +167,88 @@
 //	return 0;
 //}
 
-#define S_SIZE 50
-typedef struct NODE {
-	char title[S_SIZE];
-	int year;
-	struct NODE* link;
-} NODE;
-int main(void) {
-	NODE* list = NULL;
-	NODE* p, * next;
-	//vb때문에 수정한 부분
-	NODE* prev = 0;
-	char buffer[S_SIZE];
-	int year;
-	while (1) {
-		printf("책의 제목을 입력하시오: (종료하려면 엔터)");
-		gets(buffer); //gets_s(buffer, 50);
-		if (buffer[0] == '\0')
-			break;
-		p = (NODE*)malloc(sizeof(NODE));
-		strcpy(p->title, buffer); //strcpy_s(p->title, 50, buffer);
-		printf("책의 출판 연도를 입력하시오: ");
-		gets(buffer); //gets_s(buffer, 50);
-		year = atoi(buffer);
-		p->year = year;
-		if (list == NULL) //리스트가 비어 있으면
-			list = p; //새로운 노드를 첫번째 노드로 만든다
-		else //리스트가 비어 있지 않으면
-			prev->link = p; //새로운 노드를 이전 노드의 끝에 붙임
-		p->link = NULL; //새로운 노드의 링크 필드를 NULL로 설정
-		prev = p;
+//#define S_SIZE 50
+//typedef struct NODE {
+//	char title[S_SIZE];
+//	int year;
+//	struct NODE* link;
+//} NODE;
+//int main(void) {
+//	NODE* list = NULL;
+//	NODE* p, * next;
+//	//vb때문에 수정한 부분
+//	NODE* prev = 0;
+//	char buffer[S_SIZE];
+//	int year;
+//	while (1) {
+//		printf("책의 제목을 입력하시오: (종료하려면 엔터)");
+//		gets(buffer); //gets_s(buffer, 50);
+//		if (buffer[0] == '\0')
+//			break;
+//		p = (NODE*)malloc(sizeof(NODE));
+//		strcpy(p->title, buffer); //strcpy_s(p->title, 50, buffer);
+//		printf("책의 출판 연도를 입력하시오: ");
+//		gets(buffer); //gets_s(buffer, 50);
+//		year = atoi(buffer);
+//		p->year = year;
+//		if (list == NULL) //리스트가 비어 있으면
+//			list = p; //새로운 노드를 첫번째 노드로 만든다
+//		else //리스트가 비어 있지 않으면
+//			prev->link = p; //새로운 노드를 이전 노드의 끝에 붙임
+//		p->link = NULL; //새로운 노드의 링크 필드를 NULL로 설정
+//		prev = p;
+//	}
+//	printf("\n");
+//	// 연결 리스트의 정보를 모두 출력
+//	p = list;
+//	while (p != NULL)
+//	{
+//		printf("책의 제목:%s 출판 연도:%d \n", p->title, p->year);
+//		p = p->link;
+//	}
+//	// 동적 할당 반납
+//	p = list;
+//	while (p != NULL)
+//	{
+//		next = p->link;
+//		free(p);
+//		p = next;
+//	}
+//	return 0;
+//}
+
+typedef struct movie {
+	char title[100]; //영화 제목
+	double rating; //영화 평점
+} MOVIE;
+int main(void)
+{
+	MOVIE* movies;
+	int size, i;
+	printf("몇 편이나 저장하시겠습니까? ");
+	scanf("%d", &size);
+	movies = (MOVIE*)malloc(sizeof(MOVIE) *
+		size);
+	if (movies == NULL) {
+		printf("동적 메모리 할당 오류");
+		exit(1);
 	}
-	printf("\n");
-	// 연결 리스트의 정보를 모두 출력
-	p = list;
-	while (p != NULL)
-	{
-		printf("책의 제목:%s 출판 연도:%d \n", p->title, p->year);
-		p = p->link;
+	for (i = 0; i < size;i++) {//size편의 영화정보 입력
+		printf("영화 제목 : ");
+		//fflush(stdin); //입력 버퍼 비우기
+		getchar(); //개행문자 제거
+		gets(movies[i].title);
+		printf("영화 평점 : ");
+		scanf("%lf", &(movies[i].rating));
 	}
-	// 동적 할당 반납
-	p = list;
-	while (p != NULL)
-	{
-		next = p->link;
-		free(p);
-		p = next;
-	}
-	return 0;
+	printf("===================\n");
+	printf("제목 \t 평점 \n");
+	printf("===================\n");
+	for (i = 0;i < size;i++)
+		printf("%s \t %f \n", movies[i].title,
+			movies[i].rating);
+	printf("\n===================\n");
+	free(movies);
 	return 0;
 }
+
